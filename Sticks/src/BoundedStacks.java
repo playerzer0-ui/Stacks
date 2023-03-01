@@ -21,10 +21,8 @@ public class BoundedStacks extends Stacks{
             throw new IllegalArgumentException();
         }
         else{
-            newNode.next = first;
-            first = newNode;
+            super.push(value);
         }
-        size++;
     }
 
     public boolean isFull(){
