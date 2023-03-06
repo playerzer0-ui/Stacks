@@ -21,7 +21,8 @@ public class BoundedStacks extends Stacks{
             throw new IllegalArgumentException();
         }
         else{
-            super.push(value);
+            newNode.next = first;
+            first = newNode;
         }
         size++;
     }
