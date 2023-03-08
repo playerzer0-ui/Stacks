@@ -26,7 +26,7 @@ public class BoundedStacks extends Stacks{
     }
 
     public boolean isFull(){
-        return size == maxCapacity;
+        return size < maxCapacity;
     }
 
 }
