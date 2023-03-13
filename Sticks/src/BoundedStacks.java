@@ -16,7 +16,6 @@ public class BoundedStacks extends Stacks{
     }
 
     public void push(String value){
-        Node newNode = new Node(value);
         if(isFull()){
             throw new IllegalArgumentException();
         }
