@@ -3,7 +3,6 @@ public class BoundedStacks extends Stacks{
     private final int maxCapacity;
 
     public BoundedStacks(){
-
         maxCapacity = 10;
     }
 
@@ -22,11 +21,10 @@ public class BoundedStacks extends Stacks{
         else{
             super.push(value);
         }
-        size++;
     }
 
     public boolean isFull(){
-        return size == maxCapacity;
+        return size >= maxCapacity;
     }
 
 }
