@@ -4,10 +4,18 @@ public class Stacks {
 
     protected Node first;
     protected int size;
+    protected final int MAX_CAPACITY;
 
     public Stacks(){
         first = null;
         size = 0;
+        MAX_CAPACITY = 10;
+    }
+
+    public Stacks(int capacity){
+        first = null;
+        size = 0;
+        MAX_CAPACITY = capacity;
     }
 
     public int size(){
@@ -26,14 +34,14 @@ public class Stacks {
     }
 
     public void push(String value){
+        if(!isFull()){
+            throw new StackFullException("stack is full");
+        }
         Node newNode = new Node(value);
-        if(first == null){
-            first = newNode;
-        }
-        else{
+        if (first != null) {
             newNode.next = first;
-            first = newNode;
         }
+        first = newNode;
         size++;
     }
 
@@ -50,7 +58,9 @@ public class Stacks {
         return removed.data;
     }
 
-
+    public boolean isFull(){
+        return size < MAX_CAPACITY;
+    }
 
     protected static class Node {
         protected String data;

@@ -17,16 +17,17 @@ public class BoundedStacks extends Stacks{
 
     public void push(String value){
         Node newNode = new Node(value);
-        if(!isFull()){
-            throw new StackFullException("stack is full");
+        if(isFull()){
+            throw new IllegalArgumentException();
         }
         else{
             super.push(value);
         }
+        size++;
     }
 
     public boolean isFull(){
-        return size < maxCapacity;
+        return size == maxCapacity;
     }
 
 }
